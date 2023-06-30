@@ -6,7 +6,6 @@ build/
 !**/src/test/**/build/
 
 ### STS ###
-**/application.properties
 .apt_generated
 .classpath
 .factorypath
@@ -36,3 +35,5 @@ out/
 
 ### VS Code ###
 .vscode/
+
+**/application.properties
