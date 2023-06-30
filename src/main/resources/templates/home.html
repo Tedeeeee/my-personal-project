@@ -1,175 +1,412 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{layout/header::header}"></head>
+<head th:replace="~{layout/header::header}">
+    <title>어서오세요</title>
+</head>
 <body>
+<div th:replace="~{layout/nav::navigation}"></div>
 <main>
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <img src="/image/recoding.jpg" alt="녹음실 사진">
-                <h1 class="fw-light">안녕하세요</h1>
-                <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-                <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                </p>
-            </div>
+    <section class="position-relative py-8 py-lg-9" style="background-image:url(/image/recoding.jpg); background-position: center left; background-size: cover;">
+        <!-- Background dark overlay -->
+        <div class="bg-overlay bg-dark opacity-8"></div>
+        <div class="container z-index-9 position-relative">
+            <div class="row py-sm-5">
+                <!-- Title -->
+                <div class="col-xl-8 m-auto text-center">
+                    <h6 class="text-white fw-normal mb-3" >음악을 하고싶은 사람들이 모이는곳</h6>
+                    <h1 class="display-4 text-white mb-0">Let's Play
+                        <span class="position-relative z-index-9 d-block">Music
+                            <!-- SVG START -->
+							<span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-md-block mt-4">
+								<svg width="390.5px" height="21.5px" viewBox="0 0 445.5 21.5">
+									<path class="fill-primary opacity-7" d="M409.9,2.6c-9.7-0.6-19.5-1-29.2-1.5c-3.2-0.2-6.4-0.2-9.7-0.3c-7-0.2-14-0.4-20.9-0.5 c-3.9-0.1-7.8-0.2-11.7-0.3c-1.1,0-2.3,0-3.4,0c-2.5,0-5.1,0-7.6,0c-11.5,0-23,0-34.5,0c-2.7,0-5.5,0.1-8.2,0.1 c-6.8,0.1-13.6,0.2-20.3,0.3c-7.7,0.1-15.3,0.1-23,0.3c-12.4,0.3-24.8,0.6-37.1,0.9c-7.2,0.2-14.3,0.3-21.5,0.6 c-12.3,0.5-24.7,1-37,1.5c-6.7,0.3-13.5,0.5-20.2,0.9C112.7,5.3,99.9,6,87.1,6.7C80.3,7.1,73.5,7.4,66.7,8 C54,9.1,41.3,10.1,28.5,11.2c-2.7,0.2-5.5,0.5-8.2,0.7c-5.5,0.5-11,1.2-16.4,1.8c-0.3,0-0.7,0.1-1,0.1c-0.7,0.2-1.2,0.5-1.7,1 C0.4,15.6,0,16.6,0,17.6c0,1,0.4,2,1.1,2.7c0.7,0.7,1.8,1.2,2.7,1.1c6.6-0.7,13.2-1.5,19.8-2.1c6.1-0.5,12.3-1,18.4-1.6 c6.7-0.6,13.4-1.1,20.1-1.7c2.7-0.2,5.4-0.5,8.1-0.7c10.4-0.6,20.9-1.1,31.3-1.7c6.5-0.4,13-0.7,19.5-1.1c2.7-0.1,5.4-0.3,8.1-0.4 c10.3-0.4,20.7-0.8,31-1.2c6.3-0.2,12.5-0.5,18.8-0.7c2.1-0.1,4.2-0.2,6.3-0.2c11.2-0.3,22.3-0.5,33.5-0.8 c6.2-0.1,12.5-0.3,18.7-0.4c2.2-0.1,4.4-0.1,6.7-0.1c11.5-0.1,23-0.2,34.6-0.4c7.2-0.1,14.4-0.1,21.6-0.1c12.2,0,24.5,0.1,36.7,0.1 c2.4,0,4.8,0.1,7.2,0.2c6.8,0.2,13.5,0.4,20.3,0.6c5.1,0.2,10.1,0.3,15.2,0.4c3.6,0.1,7.2,0.4,10.8,0.6c10.6,0.6,21.1,1.2,31.7,1.8 c2.7,0.2,5.4,0.4,8,0.6c2.9,0.2,5.8,0.4,8.6,0.7c0.4,0.1,0.9,0.2,1.3,0.3c1.1,0.2,2.2,0.2,3.2-0.4c0.9-0.5,1.6-1.5,1.9-2.5 c0.6-2.2-0.7-4.5-2.9-5.2c-1.9-0.5-3.9-0.7-5.9-0.9c-1.4-0.1-2.7-0.3-4.1-0.4c-2.6-0.3-5.2-0.4-7.9-0.6 C419.7,3.1,414.8,2.9,409.9,2.6z"/>
+								</svg>
+							</span>
+                            <!-- SVG END -->
+						</span>
+                    </h1>
+                </div>
+
+                <!-- Search START -->
+                <div class="col-xl-10 mx-auto">
+                    <div class="bg-blur bg-white bg-opacity-10 border border-light border-opacity-25 rounded-3 p-4 mt-5">
+                        <!-- Form START -->
+                        <form class="row g-3 justify-content-center align-items-center">
+                            <div class="col-lg-5">
+                                <!-- Input -->
+                                <div class="form-input-dropdown position-relative">
+                                    <input class="form-control form-control-lg me-1 ps-5" type="text" data-bs-toggle="dropdown" placeholder="What are you looking for..">
+                                    <!-- dropdown button -->
+                                    <ul class="dropdown-menu input-dropdown shadow rounded-0 rounded-bottom w-100">
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-building fa-fw text-primary me-2"></i>학원</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-egg-fried fa-fw text-primary me-2"></i>합주실</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-airplane fa-fw text-primary me-2"></i>연습실</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-cup-straw fa-fw text-primary me-2"></i>팀</a></li>
+<!--                                        <li><a class="dropdown-item" href="#"><i class="bi bi-tv fa-fw text-primary me-2"></i>Arts & Entertainment</a></li>-->
+<!--                                        <li><a class="dropdown-item" href="#"><i class="bi bi-car-front fa-fw text-primary me-2"></i>Automotive</a></li>-->
+<!--                                        <li><a class="dropdown-item" href="#"><i class="bi bi-emoji-kiss fa-fw text-primary me-2"></i>Beauty & Spa</a></li>-->
+<!--                                        <li><a class="dropdown-item" href="#"><i class="bi bi-fire fa-fw text-primary me-2"></i>Nightlife</a></li>-->
+                                    </ul>
+                                    <!-- Icon -->
+                                    <span class="position-absolute top-50 start-0 translate-middle ps-5"><i class="bi bi-search fs-5"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <!-- Choices -->
+                                <div class="form-mix-icon-input form-size-lg">
+                                    <select class="form-select js-choice" data-search-enabled="true">
+                                        <option value="">이대</option>
+                                        <option>신촌</option>
+                                        <option>건대</option>
+                                        <option>홍대</option>
+                                    </select>
+                                    <!-- Icons -->
+                                    <span class="position-absolute top-50 start-0 translate-middle ps-5"><i class="bi bi-geo-alt fs-5"></i></span>
+                                    <a href="#" class="h6 mb-0 position-absolute top-50 end-0 translate-middle pe-1">
+                                        <i class="fa-solid fa-crosshairs"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 d-grid">
+                                <!-- Search -->
+                                <a class="btn btn-lg btn-primary mb-0" href="#">Search</a>
+                            </div>
+                        </form>
+                        <!-- Form END -->
+                    </div>
+                </div>
+                <!-- Search END -->
+
+            </div> <!-- Row END -->
         </div>
     </section>
 
-    <div class="album py-5 bg-light">
+
+    <section class="pt-0 pt-sm-5">
         <div class="container">
+            <!-- Title -->
+            <div class="row mb-4 mb-sm-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-0">최근 올라온 모집글</h2>
+                    <p class="mb-0">천천히 둘러보세요 늦지않았습니다. 항상 여러분들을 기다리는 모집글</p>
+                </div>
+            </div>
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
+            <div class="row g-4">
+                <!-- Card item -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card shadow h-100">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="assets/images/category/directory/01.jpg" class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay p-3 z-index-1">
+                                <div class="badge text-bg-dark"><i class="fa-solid fa-building-columns fa-fw text-warning"></i> Museum</div>
+                                <div class="badge text-bg-success">Open</div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
+                        <!-- Card body START -->
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
+                            <!-- Title -->
+                            <h5 class="card-title me-2"><a href="directory-detail.html">Portland New Art Museum</a></h5>
+
+                            <!-- Address and Contact -->
+                            <ul class="list-group list-group-borderless mb-0">
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
+                                </li>
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                        <!-- Card body END -->
 
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <!-- Card footer START-->
+                        <div class="card-footer border-top">
+                            <!-- Buttons -->
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
+                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <!-- Card item -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card shadow h-100">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="assets/images/category/directory/02.jpg" class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay p-3 z-index-1">
+                                <div class="badge text-bg-dark"><i class="fa-solid fa-bag-shopping fa-fw text-warning"></i> Shopping</div>
+                                <div class="badge text-bg-success">Open</div>
+                            </div>
+                        </div>
 
+                        <!-- Card body START -->
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="badge bg-danger bg-opacity-10 text-danger mb-2">Recommended</div>
+                            <!-- Title -->
+                            <h5 class="card-title me-2"><a href="directory-detail.html">JP Shopping Mall in California</a></h5>
+
+                            <!-- Content -->
+                            <p class="mb-0">Starts at <span class="text-success">$449</span> for 1 person</p>
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer START-->
+                        <div class="card-footer border-top">
+                            <!-- Buttons -->
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
+                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-solid fa-heart text-danger"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
+                <!-- Card item -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card shadow h-100">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="assets/images/category/hotel/4by3/02.jpg" class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay p-3 z-index-1">
+                                <div class="badge text-bg-dark"><i class="fa-solid fa-hotel fa-fw text-warning"></i> Hotel</div>
+                                <div class="badge text-bg-success">Open</div>
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <!-- Title -->
+                            <h5 class="card-title me-2"><a href="directory-detail.html">Courtyard by Marriott New York</a></h5>
+
+                            <!-- Address and Contact -->
+                            <ul class="list-group list-group-borderless mb-0">
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
+                                </li>
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer START-->
+                        <div class="card-footer border-top">
+                            <!-- Buttons -->
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
+                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
+                <!-- Card item -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card shadow h-100">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="assets/images/category/directory/03.jpg" class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay p-3 z-index-1">
+                                <div class="badge text-bg-dark"><i class="fa-solid fa-spa fa-fw text-warning"></i> Spa</div>
+                                <div class="badge text-bg-danger">Closed</div>
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="badge bg-danger bg-opacity-10 text-danger mb-2">Recommended</div>
+                            <!-- Title -->
+                            <h5 class="card-title me-2"><a href="directory-detail.html">Emperor Resort & Spa</a></h5>
+
+                            <!-- Content -->
+                            <p class="mb-0">Starts at <span class="text-success">$350</span> for 1 person</p>
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer START-->
+                        <div class="card-footer border-top">
+                            <!-- Buttons -->
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
+                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card item -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card shadow h-100">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="assets/images/category/directory/04.jpg" class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay p-3 z-index-1">
+                                <div class="badge text-bg-dark"><i class="fa-solid fa-dumbbell fa-fw text-warning"></i> Gym</div>
+                                <div class="badge text-bg-success">Open</div>
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h5 class="card-title me-2"><a href="directory-detail.html">Phoenix Power Gym</a></h5>
+
+                            <!-- Address and Contact -->
+                            <ul class="list-group list-group-borderless mb-0">
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
+                                </li>
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer START-->
+                        <div class="card-footer border-top">
+                            <!-- Buttons -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-solid fa-heart text-danger"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card item -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card shadow h-100">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="assets/images/category/hotel/4by3/08.jpg" class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay p-3 z-index-1">
+                                <div class="badge text-bg-dark"><i class="fa-solid fa-hotel fa-fw text-warning"></i> Hotel</div>
+                                <div class="badge text-bg-success">Open</div>
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h5 class="card-title me-2"><a href="directory-detail.html">Park Plaza Lodge Hotel</a></h5>
+
+                            <!-- Address and Contact -->
+                            <ul class="list-group list-group-borderless mb-0">
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
+                                </li>
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer START-->
+                        <div class="card-footer border-top">
+                            <!-- Buttons -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card item -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card shadow h-100">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="assets/images/category/directory/05.jpg" class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay p-3 z-index-1">
+                                <div class="badge text-bg-dark"><i class="fa-solid fa-car fa-fw text-warning"></i> Automotive</div>
+                                <div class="badge text-bg-success">Open</div>
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
+                        <div class="card-body">
+                            <div class="badge bg-danger bg-opacity-10 text-danger mb-2">Recommended</div>
+                            <!-- Title -->
+                            <h5 class="card-title me-2"><a href="directory-detail.html">Car Service & Repair</a></h5>
+
+                            <!-- Content -->
+                            <p class="mb-0">Starts at <span class="text-success">$599</span> for 1 person</p>
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer START-->
+                        <div class="card-footer border-top">
+                            <!-- Buttons -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card item -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="card shadow h-100">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="assets/images/category/directory/06.jpg" class="card-img-top" alt="Card image">
+                            <!-- Overlay -->
+                            <div class="card-img-overlay p-3 z-index-1">
+                                <div class="badge text-bg-dark"><i class="fa-solid fa-champagne-glasses fa-fw text-warning"></i> Restaurant</div>
+                                <div class="badge text-bg-danger">Closed</div>
+                            </div>
+                        </div>
+
+                        <!-- Card body START -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h5 class="card-title me-2"><a href="directory-detail.html">El Torero Restaurant & Bar</a></h5>
+
+                            <!-- Address and Contact -->
+                            <ul class="list-group list-group-borderless mb-0">
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
+                                </li>
+                                <li class="list-group-item small pb-0">
+                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Card body END -->
+
+                        <!-- Card footer START-->
+                        <div class="card-footer border-top">
+                            <!-- Buttons -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </main>
 
 <div th:replace="~{layout/footer::footer}"></div>
