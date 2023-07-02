@@ -1,6 +1,7 @@
 package reservation.musicroom.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import reservation.musicroom.domain.Entity.Member;
@@ -17,8 +18,13 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void createMember(MemberDto memberDto) {
-        memberDto.setMemberPassword(passwordEncoder.encode(memberDto.getMemberPassword()));
-        Member member = memberDto.toMember(memberDto);
-        memberMapper.save(member);
+
+        if (memberDto.getMemberPassword().equals(memberDto.getMemberCheckPassword())) {
+            memberDto.setMemberPassword(passwordEncoder.encode(memberDto.getMemberPassword()));
+            Member member = memberDto.toMember(memberDto);
+            memberMapper.save(member);
+        } else {
+            throw new BadCredentialsException("BadCredentialsException");
+        }
     }
 }

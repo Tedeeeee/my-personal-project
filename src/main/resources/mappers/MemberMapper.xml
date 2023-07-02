@@ -6,4 +6,11 @@
         INSERT INTO member(member_email, member_password, member_role)
         VALUES (#{memberEmail}, #{memberPassword}, #{memberRole})
     </insert>
+    
+    <!--멤버 찾기-->
+    <select id="findByEmail" resultType="Member">
+        SELECT *
+        FROM member m
+        WHERE member_email = #{m.memberEmail}
+    </select>
 </mapper>

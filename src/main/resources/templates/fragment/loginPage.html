@@ -10,10 +10,14 @@
         <div class="mb-5"><img class="img-fluid mb-3" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/logo-square.svg" alt="..." style="max-width: 4rem;">
           <h2>로그인</h2>
         </div>
-        <form class="form-validate">
+        <div th:if="${param.error}" class="form-group">
+          <span th:text="${exception}" class="alert alert-danger">아이디 혹은 비밀번호가 잘못되었습니다.</span>
+        </div>
+        <form class="form-validate" th:action="@{/login}" method="post">
+          <input type="hidden" th:value="secret" name="secret_key" />
           <div class="mb-4">
             <label class="form-label" for="loginUsername"> Email Address</label>
-            <input class="form-control" name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" autocomplete="off" required data-msg="Please enter your email">
+            <input class="form-control" name="username" id="loginUsername" type="email" placeholder="name@address.com" autocomplete="off" required data-msg="Please enter your email">
           </div>
           <div class="mb-4">
             <div class="row">
@@ -22,7 +26,7 @@
               </div>
               <div class="col-auto"><a class="form-text small text-primary" href="#">비밀번호를 잊으셨나요?</a></div>
             </div>
-            <input class="form-control" name="loginPassword" id="loginPassword" placeholder="Password" type="password" required data-msg="Please enter your password">
+            <input class="form-control" name="password" id="loginPassword" placeholder="Password" type="password" required data-msg="Please enter your password">
           </div>
           <div class="mb-4">
             <div class="form-check">
@@ -39,7 +43,6 @@
             <button class="btn btn btn-outline-primary btn-social"><i class="fa-2x fab btn-social-icon"> </i>KAKAO <span class="d-none d-sm-inline">로그인하기</span></button>
             <button class="btn btn btn-outline-song btn-social"><i class="fa-2x fab btn-social-icon"> </i>NAVER <span class="d-none d-sm-inline">로그인하기</span></button>
             <button class="btn btn btn-outline-muted btn-social"><i class="fa-2x fab btn-social-icon"> </i>GOOGLE <span class="d-none d-sm-inline">로그인하기</span></button>
-
           </div>
           <hr class="my-4">
           <p class="text-center"><small class="text-muted text-center">아직 회원이 아니신가요?<a th:href="@{/signupPage}">회원가입</a></small></p>
