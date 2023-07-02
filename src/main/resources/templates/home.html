@@ -1,414 +1,238 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout/header::header}">
-    <title>어서오세요</title>
 </head>
-<body>
+<body style="padding-top: 72px;">
 <div th:replace="~{layout/nav::navigation}"></div>
-<main>
-    <section class="position-relative py-8 py-lg-9" style="background-image:url(/image/recoding.jpg); background-position: center left; background-size: cover;">
-        <!-- Background dark overlay -->
-        <div class="bg-overlay bg-dark opacity-8"></div>
-        <div class="container z-index-9 position-relative">
-            <div class="row py-sm-5">
-                <!-- Title -->
-                <div class="col-xl-8 m-auto text-center">
-                    <h6 class="text-white fw-normal mb-3" >음악을 하고싶은 사람들이 모이는곳</h6>
-                    <h1 class="display-4 text-white mb-0">Let's Play
-                        <span class="position-relative z-index-9 d-block">Music
-                            <!-- SVG START -->
-							<span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-md-block mt-4">
-								<svg width="390.5px" height="21.5px" viewBox="0 0 445.5 21.5">
-									<path class="fill-primary opacity-7" d="M409.9,2.6c-9.7-0.6-19.5-1-29.2-1.5c-3.2-0.2-6.4-0.2-9.7-0.3c-7-0.2-14-0.4-20.9-0.5 c-3.9-0.1-7.8-0.2-11.7-0.3c-1.1,0-2.3,0-3.4,0c-2.5,0-5.1,0-7.6,0c-11.5,0-23,0-34.5,0c-2.7,0-5.5,0.1-8.2,0.1 c-6.8,0.1-13.6,0.2-20.3,0.3c-7.7,0.1-15.3,0.1-23,0.3c-12.4,0.3-24.8,0.6-37.1,0.9c-7.2,0.2-14.3,0.3-21.5,0.6 c-12.3,0.5-24.7,1-37,1.5c-6.7,0.3-13.5,0.5-20.2,0.9C112.7,5.3,99.9,6,87.1,6.7C80.3,7.1,73.5,7.4,66.7,8 C54,9.1,41.3,10.1,28.5,11.2c-2.7,0.2-5.5,0.5-8.2,0.7c-5.5,0.5-11,1.2-16.4,1.8c-0.3,0-0.7,0.1-1,0.1c-0.7,0.2-1.2,0.5-1.7,1 C0.4,15.6,0,16.6,0,17.6c0,1,0.4,2,1.1,2.7c0.7,0.7,1.8,1.2,2.7,1.1c6.6-0.7,13.2-1.5,19.8-2.1c6.1-0.5,12.3-1,18.4-1.6 c6.7-0.6,13.4-1.1,20.1-1.7c2.7-0.2,5.4-0.5,8.1-0.7c10.4-0.6,20.9-1.1,31.3-1.7c6.5-0.4,13-0.7,19.5-1.1c2.7-0.1,5.4-0.3,8.1-0.4 c10.3-0.4,20.7-0.8,31-1.2c6.3-0.2,12.5-0.5,18.8-0.7c2.1-0.1,4.2-0.2,6.3-0.2c11.2-0.3,22.3-0.5,33.5-0.8 c6.2-0.1,12.5-0.3,18.7-0.4c2.2-0.1,4.4-0.1,6.7-0.1c11.5-0.1,23-0.2,34.6-0.4c7.2-0.1,14.4-0.1,21.6-0.1c12.2,0,24.5,0.1,36.7,0.1 c2.4,0,4.8,0.1,7.2,0.2c6.8,0.2,13.5,0.4,20.3,0.6c5.1,0.2,10.1,0.3,15.2,0.4c3.6,0.1,7.2,0.4,10.8,0.6c10.6,0.6,21.1,1.2,31.7,1.8 c2.7,0.2,5.4,0.4,8,0.6c2.9,0.2,5.8,0.4,8.6,0.7c0.4,0.1,0.9,0.2,1.3,0.3c1.1,0.2,2.2,0.2,3.2-0.4c0.9-0.5,1.6-1.5,1.9-2.5 c0.6-2.2-0.7-4.5-2.9-5.2c-1.9-0.5-3.9-0.7-5.9-0.9c-1.4-0.1-2.7-0.3-4.1-0.4c-2.6-0.3-5.2-0.4-7.9-0.6 C419.7,3.1,414.8,2.9,409.9,2.6z"/>
-								</svg>
-							</span>
-                            <!-- SVG END -->
-						</span>
-                    </h1>
-                </div>
-
-                <!-- Search START -->
-                <div class="col-xl-10 mx-auto">
-                    <div class="bg-blur bg-white bg-opacity-10 border border-light border-opacity-25 rounded-3 p-4 mt-5">
-                        <!-- Form START -->
-                        <form class="row g-3 justify-content-center align-items-center">
-                            <div class="col-lg-5">
-                                <!-- Input -->
-                                <div class="form-input-dropdown position-relative">
-                                    <input class="form-control form-control-lg me-1 ps-5" type="text" data-bs-toggle="dropdown" placeholder="What are you looking for..">
-                                    <!-- dropdown button -->
-                                    <ul class="dropdown-menu input-dropdown shadow rounded-0 rounded-bottom w-100">
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-building fa-fw text-primary me-2"></i>학원</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-egg-fried fa-fw text-primary me-2"></i>합주실</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-airplane fa-fw text-primary me-2"></i>연습실</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-cup-straw fa-fw text-primary me-2"></i>팀</a></li>
-<!--                                        <li><a class="dropdown-item" href="#"><i class="bi bi-tv fa-fw text-primary me-2"></i>Arts & Entertainment</a></li>-->
-<!--                                        <li><a class="dropdown-item" href="#"><i class="bi bi-car-front fa-fw text-primary me-2"></i>Automotive</a></li>-->
-<!--                                        <li><a class="dropdown-item" href="#"><i class="bi bi-emoji-kiss fa-fw text-primary me-2"></i>Beauty & Spa</a></li>-->
-<!--                                        <li><a class="dropdown-item" href="#"><i class="bi bi-fire fa-fw text-primary me-2"></i>Nightlife</a></li>-->
-                                    </ul>
-                                    <!-- Icon -->
-                                    <span class="position-absolute top-50 start-0 translate-middle ps-5"><i class="bi bi-search fs-5"></i></span>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-5">
-                                <!-- Choices -->
-                                <div class="form-mix-icon-input form-size-lg">
-                                    <select class="form-select js-choice" data-search-enabled="true">
-                                        <option value="">이대</option>
-                                        <option>신촌</option>
-                                        <option>건대</option>
-                                        <option>홍대</option>
-                                    </select>
-                                    <!-- Icons -->
-                                    <span class="position-absolute top-50 start-0 translate-middle ps-5"><i class="bi bi-geo-alt fs-5"></i></span>
-                                    <a href="#" class="h6 mb-0 position-absolute top-50 end-0 translate-middle pe-1">
-                                        <i class="fa-solid fa-crosshairs"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2 d-grid">
-                                <!-- Search -->
-                                <a class="btn btn-lg btn-primary mb-0" href="#">Search</a>
-                            </div>
-                        </form>
-                        <!-- Form END -->
-                    </div>
-                </div>
-                <!-- Search END -->
-
-            </div> <!-- Row END -->
+<section class="hero-home">
+  <div class="swiper-container hero-slider">
+    <div class="swiper-wrapper dark-overlay">
+      <div class="swiper-slide" style="background-image:url(/image/recoding.jpg)"></div>
+    </div>
+  </div>
+  <div class="container py-6 py-md-7 text-white z-index-20">
+    <div class="row">
+      <div class="col-xl-10">
+        <div class="text-center text-lg-start">
+          <p class="subtitle letter-spacing-4 mb-2 text-secondary text-shadow">최고의 연습실을 찾아드리겠습니다</p>
+          <h1 class="display-3 fw-bold text-shadow">Play The Music</h1>
         </div>
-    </section>
-
-
-    <section class="pt-0 pt-sm-5">
-        <div class="container">
-            <!-- Title -->
-            <div class="row mb-4 mb-sm-5">
-                <div class="col-12 text-center">
-                    <h2 class="mb-0">최근 올라온 모집글</h2>
-                    <p class="mb-0">천천히 둘러보세요 늦지않았습니다. 항상 여러분들을 기다리는 모집글</p>
-                </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-6">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-8">
+        <p class="subtitle text-primary">어느 곳에서 찾고 계신가요?</p>
+        <h2>연습실 찾아보기</h2>
+      </div>
+    </div>
+    <div class="swiper-container guides-slider mx-n2 pt-3 swiper-container-horizontal">
+      <div class="swiper-wrapper pb-5" style="transform: translate3d(-916px, 0px, 0px); transition-duration: 0ms;">
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate swiper-slide-duplicate-active" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="0">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/new-york.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">서대문구</h6>
+              <p class="card-text text-sm">연습실이 많은 서대문구</p>
             </div>
-
-            <div class="row g-4">
-                <!-- Card item -->
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="card shadow h-100">
-                        <div class="position-relative">
-                            <!-- Image -->
-                            <img src="assets/images/category/directory/01.jpg" class="card-img-top" alt="Card image">
-                            <!-- Overlay -->
-                            <div class="card-img-overlay p-3 z-index-1">
-                                <div class="badge text-bg-dark"><i class="fa-solid fa-building-columns fa-fw text-warning"></i> Museum</div>
-                                <div class="badge text-bg-success">Open</div>
-                            </div>
-                        </div>
-
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <!-- Title -->
-                            <h5 class="card-title me-2"><a href="directory-detail.html">Portland New Art Museum</a></h5>
-
-                            <!-- Address and Contact -->
-                            <ul class="list-group list-group-borderless mb-0">
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
-                                </li>
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card body END -->
-
-                        <!-- Card footer START-->
-                        <div class="card-footer border-top">
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
-                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card item -->
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="card shadow h-100">
-                        <div class="position-relative">
-                            <!-- Image -->
-                            <img src="assets/images/category/directory/02.jpg" class="card-img-top" alt="Card image">
-                            <!-- Overlay -->
-                            <div class="card-img-overlay p-3 z-index-1">
-                                <div class="badge text-bg-dark"><i class="fa-solid fa-bag-shopping fa-fw text-warning"></i> Shopping</div>
-                                <div class="badge text-bg-success">Open</div>
-                            </div>
-                        </div>
-
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <div class="badge bg-danger bg-opacity-10 text-danger mb-2">Recommended</div>
-                            <!-- Title -->
-                            <h5 class="card-title me-2"><a href="directory-detail.html">JP Shopping Mall in California</a></h5>
-
-                            <!-- Content -->
-                            <p class="mb-0">Starts at <span class="text-success">$449</span> for 1 person</p>
-                        </div>
-                        <!-- Card body END -->
-
-                        <!-- Card footer START-->
-                        <div class="card-footer border-top">
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
-                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-solid fa-heart text-danger"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card item -->
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="card shadow h-100">
-                        <div class="position-relative">
-                            <!-- Image -->
-                            <img src="assets/images/category/hotel/4by3/02.jpg" class="card-img-top" alt="Card image">
-                            <!-- Overlay -->
-                            <div class="card-img-overlay p-3 z-index-1">
-                                <div class="badge text-bg-dark"><i class="fa-solid fa-hotel fa-fw text-warning"></i> Hotel</div>
-                                <div class="badge text-bg-success">Open</div>
-                            </div>
-                        </div>
-
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <!-- Title -->
-                            <h5 class="card-title me-2"><a href="directory-detail.html">Courtyard by Marriott New York</a></h5>
-
-                            <!-- Address and Contact -->
-                            <ul class="list-group list-group-borderless mb-0">
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
-                                </li>
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card body END -->
-
-                        <!-- Card footer START-->
-                        <div class="card-footer border-top">
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
-                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card item -->
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="card shadow h-100">
-                        <div class="position-relative">
-                            <!-- Image -->
-                            <img src="assets/images/category/directory/03.jpg" class="card-img-top" alt="Card image">
-                            <!-- Overlay -->
-                            <div class="card-img-overlay p-3 z-index-1">
-                                <div class="badge text-bg-dark"><i class="fa-solid fa-spa fa-fw text-warning"></i> Spa</div>
-                                <div class="badge text-bg-danger">Closed</div>
-                            </div>
-                        </div>
-
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <div class="badge bg-danger bg-opacity-10 text-danger mb-2">Recommended</div>
-                            <!-- Title -->
-                            <h5 class="card-title me-2"><a href="directory-detail.html">Emperor Resort & Spa</a></h5>
-
-                            <!-- Content -->
-                            <p class="mb-0">Starts at <span class="text-success">$350</span> for 1 person</p>
-                        </div>
-                        <!-- Card body END -->
-
-                        <!-- Card footer START-->
-                        <div class="card-footer border-top">
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
-                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card item -->
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="card shadow h-100">
-                        <div class="position-relative">
-                            <!-- Image -->
-                            <img src="assets/images/category/directory/04.jpg" class="card-img-top" alt="Card image">
-                            <!-- Overlay -->
-                            <div class="card-img-overlay p-3 z-index-1">
-                                <div class="badge text-bg-dark"><i class="fa-solid fa-dumbbell fa-fw text-warning"></i> Gym</div>
-                                <div class="badge text-bg-success">Open</div>
-                            </div>
-                        </div>
-
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <!-- Title -->
-                            <h5 class="card-title me-2"><a href="directory-detail.html">Phoenix Power Gym</a></h5>
-
-                            <!-- Address and Contact -->
-                            <ul class="list-group list-group-borderless mb-0">
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
-                                </li>
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card body END -->
-
-                        <!-- Card footer START-->
-                        <div class="card-footer border-top">
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
-                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-solid fa-heart text-danger"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card item -->
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="card shadow h-100">
-                        <div class="position-relative">
-                            <!-- Image -->
-                            <img src="assets/images/category/hotel/4by3/08.jpg" class="card-img-top" alt="Card image">
-                            <!-- Overlay -->
-                            <div class="card-img-overlay p-3 z-index-1">
-                                <div class="badge text-bg-dark"><i class="fa-solid fa-hotel fa-fw text-warning"></i> Hotel</div>
-                                <div class="badge text-bg-success">Open</div>
-                            </div>
-                        </div>
-
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <!-- Title -->
-                            <h5 class="card-title me-2"><a href="directory-detail.html">Park Plaza Lodge Hotel</a></h5>
-
-                            <!-- Address and Contact -->
-                            <ul class="list-group list-group-borderless mb-0">
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
-                                </li>
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card body END -->
-
-                        <!-- Card footer START-->
-                        <div class="card-footer border-top">
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
-                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card item -->
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="card shadow h-100">
-                        <div class="position-relative">
-                            <!-- Image -->
-                            <img src="assets/images/category/directory/05.jpg" class="card-img-top" alt="Card image">
-                            <!-- Overlay -->
-                            <div class="card-img-overlay p-3 z-index-1">
-                                <div class="badge text-bg-dark"><i class="fa-solid fa-car fa-fw text-warning"></i> Automotive</div>
-                                <div class="badge text-bg-success">Open</div>
-                            </div>
-                        </div>
-
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <div class="badge bg-danger bg-opacity-10 text-danger mb-2">Recommended</div>
-                            <!-- Title -->
-                            <h5 class="card-title me-2"><a href="directory-detail.html">Car Service & Repair</a></h5>
-
-                            <!-- Content -->
-                            <p class="mb-0">Starts at <span class="text-success">$599</span> for 1 person</p>
-                        </div>
-                        <!-- Card body END -->
-
-                        <!-- Card footer START-->
-                        <div class="card-footer border-top">
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
-                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card item -->
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="card shadow h-100">
-                        <div class="position-relative">
-                            <!-- Image -->
-                            <img src="assets/images/category/directory/06.jpg" class="card-img-top" alt="Card image">
-                            <!-- Overlay -->
-                            <div class="card-img-overlay p-3 z-index-1">
-                                <div class="badge text-bg-dark"><i class="fa-solid fa-champagne-glasses fa-fw text-warning"></i> Restaurant</div>
-                                <div class="badge text-bg-danger">Closed</div>
-                            </div>
-                        </div>
-
-                        <!-- Card body START -->
-                        <div class="card-body">
-                            <!-- Title -->
-                            <h5 class="card-title me-2"><a href="directory-detail.html">El Torero Restaurant & Bar</a></h5>
-
-                            <!-- Address and Contact -->
-                            <ul class="list-group list-group-borderless mb-0">
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-pin-map-fill fa-fw h6 small mb-0"></i> W Century Blvd, Los Angeles
-                                </li>
-                                <li class="list-group-item small pb-0">
-                                    <i class="bi bi-telephone-fill fa-fw h6 small mb-0"></i> +(125) 548 996
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card body END -->
-
-                        <!-- Card footer START-->
-                        <div class="card-footer border-top">
-                            <!-- Buttons -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="directory-detail.html" class="btn btn-link p-0 mb-0">View detail<i class="bi bi-arrow-right ms-1"></i></a>
-                                <a href="#" class="h6 mb-0 z-index-2"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-</main>
-
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate swiper-slide-duplicate-next" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="1">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/paris.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">영등포구</h6>
+              <p class="card-text text-sm">다양한 문화 생활 영등포구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="2">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/barcelona.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">마포구</h6>
+              <p class="card-text text-sm">홍대가 있는 마포구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate swiper-slide-prev" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="3">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/prague.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">중구</h6>
+              <p class="card-text text-sm">중앙이 충무로인 중구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-active" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="0">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" th:href="@{/studioPage}"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/new-york.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">서대문구</h6>
+              <p class="card-text text-sm">연습실이 많은 서대문구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-next" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="1">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/paris.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">영등포구</h6>
+              <p class="card-text text-sm">다양한 문화 생활 영등포구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="2">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/barcelona.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">마포구</h6>
+              <p class="card-text text-sm">홍대가 있는 마포구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate-prev" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="3">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/prague.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">중구</h6>
+              <p class="card-text text-sm">중앙이 충무로인 중구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate swiper-slide-duplicate-active" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="0">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/new-york.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">강남구</h6>
+              <p class="card-text text-sm">사람이 많은 강남구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate swiper-slide-duplicate-next" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="1">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/paris.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">용산구</h6>
+              <p class="card-text text-sm">디지털상가의 메카 용산구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="2">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/barcelona.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">마포구</h6>
+              <p class="card-text text-sm">홍대가 있는 마포구</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate" style="width: 214px; margin-right: 15px;" data-swiper-slide-index="3">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a class="tile-link" href="category.html"></a><img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/prague.jpg" alt="Card image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">중구</h6>
+              <p class="card-text text-sm">중앙이 충무로인 중구</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination d-md-none swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-bullets-dynamic" style="width: 40px;">
+        <span class="swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main" tabindex="0" role="button" aria-label="Go to slide 1" style="left: 12px;"></span>
+        <span class="swiper-pagination-bullet swiper-pagination-bullet-active-next" tabindex="0" role="button" aria-label="Go to slide 2" style="left: 12px;"></span>
+        <span class="swiper-pagination-bullet swiper-pagination-bullet-active-next-next" tabindex="0" role="button" aria-label="Go to slide 3" style="left: 12px;"></span>
+        <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4" style="left: 12px;"></span>
+      </div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container-fluid px-0">
+    <div class="swiper-container instagram-slider swiper-container-horizontal">
+      <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+        <div class="swiper-slide overflow-hidden swiper-slide-active" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-1.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden swiper-slide-next" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-2.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-3.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-4.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-5.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-6.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-7.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-8.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-9.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-10.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-11.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-12.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-13.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-14.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-10.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-11.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-12.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-13.jpg" alt=" "></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 129.4px;"><a href="#"><img class="img-fluid hover-scale" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/instagram/instagram-14.jpg" alt=" "></a></div>
+      </div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+  </div>
+</section>
+<footer class="position-relative z-index-10 d-print-none">
+  <!-- Main block - menus, subscribe form-->
+  <div class="py-6 bg-gray-200 text-muted">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="fw-bold text-uppercase text-dark mb-3">Directory</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="facebook"><i class="fab fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="pinterest"><i class="fab fa-pinterest"></i></a></li>
+            <li class="list-inline-item"><a class="text-muted text-primary-hover" href="#" target="_blank" title="vimeo"><i class="fab fa-vimeo"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
+          <h6 class="text-uppercase text-dark mb-3">Rentals</h6>
+          <ul class="list-unstyled">
+            <li><a class="text-muted" href="index.html">Rooms</a></li>
+            <li><a class="text-muted" href="category-rooms.html">Map on top</a></li>
+            <li><a class="text-muted" href="category-2-rooms.html">Side map</a></li>
+            <li><a class="text-muted" href="category-3-rooms.html">No map</a></li>
+            <li><a class="text-muted" href="detail-rooms.html">Room detail</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
+          <h6 class="text-uppercase text-dark mb-3">Pages</h6>
+          <ul class="list-unstyled">
+            <li><a class="text-muted" href="compare.html">Comparison</a></li>
+            <li><a class="text-muted" href="team.html">Team</a></li>
+            <li><a class="text-muted" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="text-uppercase text-dark mb-3">Daily Offers & Discounts</h6>
+          <p class="mb-3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
+          <form action="#" id="newsletter-form">
+            <div class="input-group mb-3">
+              <input class="form-control bg-transparent border-dark border-end-0" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+              <button class="btn btn-outline-dark border-start-0" type="submit"> <i class="fa fa-paper-plane text-lg"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Copyright section of the footer-->
+  <div class="py-4 fw-light bg-gray-800 text-gray-300">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-sm mb-md-0">&copy; 2021, Your company.  All rights reserved.</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-inline mb-0 mt-2 mt-md-0 text-center text-md-end">
+            <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/visa.svg" alt="..."></li>
+            <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/mastercard.svg" alt="..."></li>
+            <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/paypal.svg" alt="..."></li>
+            <li class="list-inline-item"><img class="w-2rem" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/western-union.svg" alt="..."></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer-->
 <div th:replace="~{layout/footer::footer}"></div>
 </body>
 </html>

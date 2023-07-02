@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<nav class="p-3 mb-3 border-bottom fixed-top" style="background-color: white;" th:fragment="navigation">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-            </a>
-
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 link-dark">연습실</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">팀찾기</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">공연</a></li>
-            </ul>
-
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-            </form>
-
-            <div class="dropdown text-end">
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu text-small">
-                    <li><a class="dropdown-item" href="#">프로필</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">로그아웃</a></li>
+<header class="header" th:fragment="navigation">
+    <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center"><a class="navbar-brand py-1" href="index.html"><img src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/logo.svg" alt="Directory logo"></a>
+                <form class="form-inline d-none d-sm-flex" action="#" id="search">
+                    <div class="input-label-absolute input-label-absolute-left input-expand ms-lg-2 ms-xl-3">
+                        <label class="label-absolute" for="search_search"><i class="fa fa-search"></i><span class="sr-only">What are you looking for?</span></label>
+                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="search_search" placeholder="Search" aria-label="Search" type="search">
+                    </div>
+                </form>
+            </div>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <form class="form-inline mt-4 mb-2 d-sm-none" action="#" id="searchcollapsed">
+                    <div class="input-label-absolute input-label-absolute-left w-100">
+                        <label class="label-absolute" for="searchcollapsed_search"><i class="fa fa-search"></i><span class="sr-only">What are you looking for?</span></label>
+                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="searchcollapsed_search" placeholder="Search" aria-label="Search" type="search">
+                    </div>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/signupPage}">회원가입</a></li>
+                    <li class="nav-item mt-3 mt-lg-0 ms-lg-3 d-lg-none d-xl-inline-block"><a class="btn btn-primary" th:href="@{/loginPage}">로그인 하기</a></li>
                 </ul>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
 </html>
