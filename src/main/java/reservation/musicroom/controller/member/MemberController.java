@@ -14,9 +14,9 @@ public class MemberController {
     private final MemberService memberService;
 
     // 내 프로필
-    @GetMapping("/myPage")
+    @GetMapping("/mypage")
     public String myPage() {
-        return "fragment/myPage";
+        return "myProfile";
     }
 
     // 회원가입 홈페이지 불러오는곳

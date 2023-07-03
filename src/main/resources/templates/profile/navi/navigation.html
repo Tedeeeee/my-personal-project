@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="col-lg-4" th:fragment="profilNavi">
+  <div class="p-4 shadow ms-lg-4 rounded sticky-top" style="top: 100px;">
+    <p class="text-muted"><span class="text-primary h2">프로필 관리</span></p>
+    <hr class="my-4">
+    <div class="list-group list-group-flush rounded-0 text-sm my-3">
+      <a class="list-group-item list-group-item-action text-muted" th:href="@{/myProfilePage}"> <i class="far fa-file me-2"></i>프로필 관리</a>
+      <hr class="my-0">
+      <a class="list-group-item list-group-item-action text-muted" th:href="@{/myRoomPage}"> <i class="far fa-file me-2"></i>연습실 관리</a>
+      <hr class="my-0">
+      <a class="list-group-item list-group-item-action text-muted" href="knowledge-base-topic.html"> <i class="far fa-file me-2"></i>다니는 연습실</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

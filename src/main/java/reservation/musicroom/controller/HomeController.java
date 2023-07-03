@@ -10,9 +10,29 @@ public class HomeController {
     public String index() {
         return "home";
     }
-    @GetMapping("/studioPage")
-    public String studio() {
+
+    @GetMapping("/studioList")
+    public String studioList() {
         return "fragment/studioList";
     }
 
+    @GetMapping("/studioPage")
+    public String studioPage() {
+        return "fragment/studioPage";
+    }
+
+    @GetMapping("/makeRoomPage")
+    public String roomWritePage() {
+        return "fragment/makeRoomPage";
+    }
+
+    @GetMapping("/myProfilePage")
+    public String myProfilePage() {
+        return "profile/myProfile";
+    }
+
+    @GetMapping("/myRoomPage")
+    public String myRoomPage() {
+        return "profile/myRoom";
+    }
 }

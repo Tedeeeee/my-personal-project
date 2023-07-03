@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/header::header}">
+  <title>연습실 등록하기</title></head>
+<body style="padding-top: 72px;">
+<div th:replace="~{layout/nav::navigation}"></div>
+<section>
+  <div class="mh-full-screen d-flex align-items-center dark-overlay justify-content-center">
+    <img class="bg-image" src="https://d19m59y37dris4.cloudfront.net/directory/2-0-2/img/photo/aron-visuals-3jBU9TbKW7o-unsplash.jpg" alt="Not found">
+    <div class="container text-white text-lg overlay-content py-6 py-lg-0">
+      <h6 class="display-3 fw-bold mb-5">연습실의 이름을 알려주세요</h6>
+      <form th:action="@{/makeRoom}" method="post">
+      <div class="d-flex align-items-center form-group">
+        <div class="input-label-absolute input-label-absolute-right">
+          <input class="form-control pe-4" type="text" name="roomName" placeholder="연습실의 이름은 무엇입니까?" id="form_search" style="width: 400px;">
+        </div>
+        <button class="btn btn-primary" type="submit">연습실 생성 </button>
+      </div>
+      </form>
+    </div>
+  </div>
+</section>
+<div th:replace="~{layout/secondFooter::secondFooter}"></div>
+<div th:replace="~{layout/footer::footer}"></div>
+</body>
+</html>
