@@ -9,7 +9,6 @@ import lombok.*;
 @ToString
 public class Member {
 
-    private Long Id;
     private String MemberEmail;
     private String MemberPassword;
     private Role MemberRole;

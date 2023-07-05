@@ -1,6 +1,6 @@
 package reservation.musicroom.service;
 
-import reservation.musicroom.domain.dto.MemberDto;
+import reservation.musicroom.domain.dto.member.MemberDto;
 
 
 public interface MemberService {

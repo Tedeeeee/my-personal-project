@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reservation.musicroom.mapper.RoomMapper">
+
+    <insert id="createRoom" parameterType="Room">
+        INSERT INTO room(member_email, room_name, room_location, room_locationDtail, room_explanation, room_floor, room_facilities)
+        VALUES (#{memberEmail},#{roomName}, #{roomLocation}, #{roomLocationDetail},#{roomExplanation}, #{roomFloor}, #{roomFacilities})
+    </insert>
+</mapper>
