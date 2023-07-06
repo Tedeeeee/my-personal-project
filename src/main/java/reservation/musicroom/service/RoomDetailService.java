@@ -12,4 +12,6 @@ public interface RoomDetailService {
     int registerRoomDetail(RoomDetailRequestDto roomDetailRequestDto);
 
     List<RoomDetailResponseDto> findRoom(RoomDetailRequestDto roomDetailRequestDto);
+
+    RoomDetailResponseDto findRoomNameByRoomNum(String roomNumber);
 }

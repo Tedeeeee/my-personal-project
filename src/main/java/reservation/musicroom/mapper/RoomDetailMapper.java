@@ -13,4 +13,6 @@ public interface RoomDetailMapper {
     int registerRoomDetail(RoomDetailRequestDto roomDetailRequestDto);
 
     List<RoomDetailResponseDto> findRoomDetail(@Param("roomName") String roomName, @Param("roomFloor") String roomFloor);
+
+    RoomDetailResponseDto findRoomDetailByRoomNum(String roomDetailName);
 }

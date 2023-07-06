@@ -13,4 +13,5 @@ public class RoomDetail {
     private String roomDetailName;
     private String roomDetailPhoto;
     private String roomDetailFacilities;
+    private String roomDetailState;
 }

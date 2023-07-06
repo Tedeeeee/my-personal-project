@@ -4,13 +4,19 @@
 
     <insert id="registerRoomDetail" parameterType="RoomDetail">
         INSERT INTO roomdetail(room_name, room_floor, roomdetail_name, roomdetail_photo, roomdetail_facilities, roomdetail_state)
-        VALUES (#{roomName}, #{roomFloor}, #{roomDetailName}, #{roomDetailPhoto}, #{roomDetailFacilities}, "Y")
+        VALUES (#{roomName}, #{roomFloor}, #{roomDetailName}, #{roomDetailPhoto}, #{roomDetailFacilities}, #{roomDetailState})
     </insert>
 
-    <select id="findRoomDetail" >
+    <select id="findRoomDetail">
         SELECT *
         FROM roomdetail
         WHERE room_name = #{roomName} AND room_floor = #{roomFloor}
+    </select>
+
+    <select id="findRoomDetailByRoomNum">
+        SELECT *
+        FROM roomdetail
+        WHERE roomdetail_name = #{roomDetailName}
     </select>
 
 </mapper>

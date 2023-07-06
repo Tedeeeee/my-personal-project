@@ -22,6 +22,16 @@ public class RoomDetailServiceImpl implements RoomDetailService {
 
     @Override
     public List<RoomDetailResponseDto> findRoom(RoomDetailRequestDto roomDetailRequestDto) {
+
+        List<RoomDetailResponseDto> roomDetail = roomDetailMapper.findRoomDetail(roomDetailRequestDto.getRoomName(), roomDetailRequestDto.getRoomFloor());
+
+        System.out.println(roomDetail);
+
         return roomDetailMapper.findRoomDetail(roomDetailRequestDto.getRoomName(), roomDetailRequestDto.getRoomFloor());
+    }
+
+    @Override
+    public RoomDetailResponseDto findRoomNameByRoomNum(String roomNumber) {
+        return roomDetailMapper.findRoomDetailByRoomNum(roomNumber);
     }
 }
