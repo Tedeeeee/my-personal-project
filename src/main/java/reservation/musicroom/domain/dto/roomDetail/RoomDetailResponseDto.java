@@ -6,4 +6,8 @@ import lombok.Data;
 @Data
 @Builder
 public class RoomDetailResponseDto {
+    private String roomDetailName;
+    private String roomDetailPhoto;
+    private String roomDetailFacilities;
+
 }

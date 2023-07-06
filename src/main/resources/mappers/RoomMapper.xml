@@ -3,7 +3,19 @@
 <mapper namespace="reservation.musicroom.mapper.RoomMapper">
 
     <insert id="createRoom" parameterType="Room">
-        INSERT INTO room(member_email, room_name, room_location, room_locationDtail, room_explanation, room_floor, room_facilities)
-        VALUES (#{memberEmail},#{roomName}, #{roomLocation}, #{roomLocationDetail},#{roomExplanation}, #{roomFloor}, #{roomFacilities})
+        INSERT INTO room(member_email, room_name, room_location, room_locationDetail, room_explanation, room_floor, room_facilities, room_count)
+        VALUES (#{memberEmail},#{roomName}, #{roomLocation}, #{roomLocationDetail},#{roomExplanation}, #{roomFloor}, #{roomFacilities}, 0)
     </insert>
+
+    <select id="getAllRoom" resultType="RoomResponseDto">
+        SELECT *
+        FROM room
+        WHERE member_email = #{memberEmail}
+    </select>
+
+    <select id="getMyRoom">
+        SELECT *
+        FROM room
+        WHERE room_name = #{roomName} AND room_location = #{roomLocation}
+    </select>
 </mapper>

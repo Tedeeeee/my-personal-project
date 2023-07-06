@@ -10,6 +10,7 @@ public class RoomDetailRequestDto {
     private String roomDetailName;
     private String roomDetailPhoto;
     private String roomDetailFacilities;
+    private Long roomCount;
 
     public RoomDetail toRoomDetail(RoomDetailRequestDto requestDto) {
         return RoomDetail.builder()

@@ -15,6 +15,7 @@ public class RoomRequestDto {
     private String roomExplanation;
     private String roomFloor;
     private String roomFacilities;
+    private String roomCount;
 
     public Room toRoom(RoomRequestDto requestDto) {
         return Room.builder()
@@ -25,6 +26,7 @@ public class RoomRequestDto {
                 .roomExplanation(requestDto.getRoomExplanation())
                 .roomFloor(requestDto.getRoomFloor())
                 .roomFacilities(requestDto.getRoomFacilities())
+                .roomCount(requestDto.getRoomCount())
                 .build();
     }
 }
