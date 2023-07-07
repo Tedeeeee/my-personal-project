@@ -3,20 +3,49 @@
 <mapper namespace="reservation.musicroom.mapper.RoomDetailMapper">
 
     <insert id="registerRoomDetail" parameterType="RoomDetail">
-        INSERT INTO roomdetail(room_name, room_floor, roomdetail_name, roomdetail_photo, roomdetail_facilities, roomdetail_state)
-        VALUES (#{roomName}, #{roomFloor}, #{roomDetailName}, #{roomDetailPhoto}, #{roomDetailFacilities}, #{roomDetailState})
+        INSERT INTO roomdetail(room_location, room_floor, roomdetail_name, roomdetail_state, roomdetail_size, roomdetail_timePrice, roomdetail_monthPrice)
+        VALUES (#{roomLocation}, #{roomFloor}, #{roomDetailName}, #{roomDetailState}, 0, 0, 0)
     </insert>
 
     <select id="findRoomDetail">
         SELECT *
         FROM roomdetail
-        WHERE room_name = #{roomName} AND room_floor = #{roomFloor}
+        WHERE room_location = #{roomLocation} AND room_floor = #{roomFloor}
     </select>
 
     <select id="findRoomDetailByRoomNum">
         SELECT *
         FROM roomdetail
-        WHERE roomdetail_name = #{roomDetailName}
+        WHERE roomdetail_name = #{roomDetailName} AND room_location = #{roomLocation}
     </select>
 
+    <update id="optionChange">
+        UPDATE roomdetail
+        SET roomdetail_facilities = #{roomDetailFacilities}
+        WHERE roomdetail_name = #{roomDetailName} AND room_location = #{roomLocation}
+    </update>
+
+    <update id="nameChange">
+        UPDATE  roomdetail
+        SET roomdetail_name = #{newRoomDetailName}
+        WHERE roomdetail_name = #{exRoomDetailName} AND room_location = #{roomLocation}
+    </update>
+
+    <update id="sizeChange">
+        UPDATE  roomdetail
+        SET roomdetail_size = #{newRoomDetailSize}
+        WHERE roomdetail_name = #{exRoomDetailName} AND room_location = #{roomLocation}
+    </update>
+
+    <update id="timePriceChange">
+        UPDATE  roomdetail
+        SET roomdetail_timePrice = #{newRoomDetailTimePrice}
+        WHERE roomdetail_name = #{exRoomDetailName} AND room_location = #{roomLocation}
+    </update>
+
+    <update id="monthPriceChange">
+        UPDATE  roomdetail
+        SET roomdetail_monthPrice = #{newRoomDetailMonthPrice}
+        WHERE roomdetail_name = #{exRoomDetailName} AND room_location = #{roomLocation}
+    </update>
 </mapper>

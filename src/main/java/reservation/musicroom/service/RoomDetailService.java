@@ -1,7 +1,6 @@
 package reservation.musicroom.service;
 
-import org.springframework.stereotype.Service;
-import reservation.musicroom.domain.dto.room.RoomResponseDto;
+import reservation.musicroom.domain.dto.roomDetail.ChangeRoomDetailDto;
 import reservation.musicroom.domain.dto.roomDetail.RoomDetailRequestDto;
 import reservation.musicroom.domain.dto.roomDetail.RoomDetailResponseDto;
 
@@ -13,5 +12,12 @@ public interface RoomDetailService {
 
     List<RoomDetailResponseDto> findRoom(RoomDetailRequestDto roomDetailRequestDto);
 
-    RoomDetailResponseDto findRoomNameByRoomNum(String roomNumber);
+    RoomDetailResponseDto findRoomNameByRoomNum(RoomDetailRequestDto roomDetailRequestDto);
+
+    int roomDetailOptionChange(RoomDetailRequestDto roomDetailRequestDto);
+
+    int roomDetailNameChange(ChangeRoomDetailDto changeRoomDetailDto);
+    int roomDetailSizeChange(ChangeRoomDetailDto changeRoomDetailDto);
+    int roomDetailTimePriceChange(ChangeRoomDetailDto changeRoomDetailDto);
+    int roomDetailMonthPriceChange(ChangeRoomDetailDto changeRoomDetailDto);
 }

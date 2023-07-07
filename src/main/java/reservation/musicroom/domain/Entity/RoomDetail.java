@@ -8,10 +8,14 @@ import lombok.*;
 @Builder
 @ToString
 public class RoomDetail {
-    private String roomName;
+    private String roomLocation;
     private String roomFloor;
     private String roomDetailName;
     private String roomDetailPhoto;
     private String roomDetailFacilities;
     private String roomDetailState;
+    private String roomDetailTimePrice;
+    private String roomDetailMonthPrice;
+    private String roomDetailSize;
+    private String roomDetailUserEmail;
 }
