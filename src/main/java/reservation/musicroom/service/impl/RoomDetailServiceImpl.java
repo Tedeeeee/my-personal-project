@@ -37,6 +37,11 @@ public class RoomDetailServiceImpl implements RoomDetailService {
         return roomDetailMapper.findRoomDetailByRoomNum(roomDetailRequestDto.getRoomDetailName(), roomDetailRequestDto.getRoomLocation());
     }
 
+    @Override
+    public RoomDetailResponseDto ownerRoomDetail(String roomLocation, String memberEmail) {
+        return roomDetailMapper.ownerRoomDetail(roomLocation, memberEmail);
+    }
+
     // 옵션바꾸기
     @Override
     public int roomDetailOptionChange(RoomDetailRequestDto roomDetailRequestDto) {

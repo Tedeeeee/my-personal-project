@@ -1,9 +1,10 @@
 package reservation.musicroom.service;
 
-import reservation.musicroom.domain.dto.member.MemberDto;
+import reservation.musicroom.domain.dto.member.MemberRequestDto;
+import reservation.musicroom.domain.dto.member.MemberResponseDto;
 
 
 public interface MemberService {
 
-    void createMember(MemberDto memberDto);
+    MemberResponseDto findByEmail(String memberEmail);
 }

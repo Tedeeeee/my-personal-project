@@ -48,4 +48,10 @@
         SET roomdetail_monthPrice = #{newRoomDetailMonthPrice}
         WHERE roomdetail_name = #{exRoomDetailName} AND room_location = #{roomLocation}
     </update>
+
+    <select id="ownerRoomDetail">
+        SELECT *
+        FROM room
+        WHERE member_email = #{memberEmail} AND room_location = #{roomLocation}
+    </select>
 </mapper>

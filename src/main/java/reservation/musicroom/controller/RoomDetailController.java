@@ -65,4 +65,10 @@ public class RoomDetailController {
     public ResponseEntity<Integer> roomDetailMonthPriceChange(@RequestBody ChangeRoomDetailDto changeRoomDetailDto) {
         return ResponseEntity.ok(roomDetailService.roomDetailMonthPriceChange(changeRoomDetailDto));
     }
+
+    // 사용자가 나의 룸 페이지를 가져올경우
+    @GetMapping("/ownerRoom")
+    public ResponseEntity<RoomDetailResponseDto> ownerRoomDetail(@RequestParam String studioLocation, @RequestParam String email) {
+        return ResponseEntity.ok(roomDetailService.ownerRoomDetail(studioLocation, email));
+    }
 }

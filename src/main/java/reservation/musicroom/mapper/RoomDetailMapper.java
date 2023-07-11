@@ -16,6 +16,8 @@ public interface RoomDetailMapper {
 
     RoomDetailResponseDto findRoomDetailByRoomNum(@Param("roomDetailName") String roomDetailName, @Param("roomLocation") String roomLocation);
 
+    RoomDetailResponseDto ownerRoomDetail(@Param("roomLocation") String roomLocation, @Param("memberEmail") String memberEmail);
+
     int optionChange(@Param("roomDetailName") String roomDetailName, @Param("roomLocation") String roomLocation, @Param("roomDetailFacilities") String roomDetailFacilities);
 
     int nameChange(@Param("exRoomDetailName") String exRoomDetailName, @Param("roomLocation") String roomLocation, @Param("newRoomDetailName")String newRoomDetailName);

@@ -12,5 +12,6 @@ import java.util.List;
 public interface RoomMapper {
     int createRoom(Room room);
     List<RoomResponseDto> getAllRoom(String memberEmail);
+    List<RoomResponseDto> findAllRoom();
     RoomResponseDto getMyRoom(@Param("roomName") String roomName,@Param("roomLocation") String roomLocation);
 }

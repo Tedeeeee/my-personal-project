@@ -10,7 +10,7 @@
     <!--멤버 찾기-->
     <select id="findByEmail" resultType="Member">
         SELECT *
-        FROM member m
-        WHERE member_email = #{m.memberEmail}
+        FROM member
+        WHERE member_email = #{memberEmail}
     </select>
 </mapper>

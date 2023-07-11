@@ -18,4 +18,9 @@
         FROM room
         WHERE room_name = #{roomName} AND room_location = #{roomLocation}
     </select>
+
+    <select id="findAllRoom">
+        SELECT *
+        FROM room
+    </select>
 </mapper>

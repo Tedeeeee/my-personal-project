@@ -13,9 +13,9 @@ public interface RoomDetailService {
     List<RoomDetailResponseDto> findRoom(RoomDetailRequestDto roomDetailRequestDto);
 
     RoomDetailResponseDto findRoomNameByRoomNum(RoomDetailRequestDto roomDetailRequestDto);
+    RoomDetailResponseDto ownerRoomDetail(String roomLocation, String memberEmail);
 
     int roomDetailOptionChange(RoomDetailRequestDto roomDetailRequestDto);
-
     int roomDetailNameChange(ChangeRoomDetailDto changeRoomDetailDto);
     int roomDetailSizeChange(ChangeRoomDetailDto changeRoomDetailDto);
     int roomDetailTimePriceChange(ChangeRoomDetailDto changeRoomDetailDto);

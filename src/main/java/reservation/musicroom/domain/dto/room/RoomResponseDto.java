@@ -8,6 +8,7 @@ import lombok.ToString;
 @Builder
 @ToString
 public class RoomResponseDto {
+    private String memberEmail;
     private String roomName;
     private String roomLocation;
     private String roomLocationDetail;

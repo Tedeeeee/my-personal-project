@@ -1,9 +1,6 @@
 package reservation.musicroom.domain.Entity;
 
 import lombok.*;
-import reservation.musicroom.domain.dto.member.MemberDto;
-import reservation.musicroom.domain.dto.room.RoomRequestDto;
-import reservation.musicroom.domain.dto.room.RoomResponseDto;
 
 @Getter
 @NoArgsConstructor
