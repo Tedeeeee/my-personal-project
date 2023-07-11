@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reservation.musicroom.domain.dto.room.RoomRequestDto;
 import reservation.musicroom.domain.dto.room.RoomResponseDto;
+import reservation.musicroom.domain.dto.roomDetail.RoomDetailRequestDto;
 import reservation.musicroom.domain.dto.roomDetail.RoomDetailResponseDto;
 import reservation.musicroom.mapper.RoomMapper;
 import reservation.musicroom.service.RoomService;
@@ -40,5 +41,11 @@ public class RoomController {
     @PostMapping ("/myRoom")
     public ResponseEntity<RoomResponseDto> myRoom(@RequestBody RoomRequestDto roomRequestDto) {
         return ResponseEntity.ok(roomService.getMyRoomByRoomName(roomRequestDto));
+    }
+
+    // 사용자가 나의 룸 페이지를 가져올경우
+    @PostMapping("/ownerRoom")
+    public ResponseEntity<RoomResponseDto> ownerRoomDetail(@RequestBody RoomRequestDto roomRequestDto) {
+        return ResponseEntity.ok(roomService.ownerRoomDetail(roomRequestDto));
     }
 }

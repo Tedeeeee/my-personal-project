@@ -16,4 +16,5 @@ public class RoomResponseDto {
     private String roomFloor;
     private String roomFacilities;
     private String roomCount;
+    private String roomPhoto;
 }

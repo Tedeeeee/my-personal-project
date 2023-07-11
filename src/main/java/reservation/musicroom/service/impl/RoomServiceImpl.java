@@ -34,4 +34,9 @@ public class RoomServiceImpl implements RoomService {
     public RoomResponseDto getMyRoomByRoomName(RoomRequestDto requestDto) {
         return roomMapper.getMyRoom(requestDto.getRoomName(), requestDto.getRoomLocation());
     }
+
+    @Override
+    public RoomResponseDto ownerRoomDetail(RoomRequestDto roomRequestDto) {
+        return roomMapper.ownerRoomDetail(roomRequestDto.getRoomLocation());
+    }
 }
