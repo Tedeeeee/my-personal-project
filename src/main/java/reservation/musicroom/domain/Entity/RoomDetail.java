@@ -17,5 +17,4 @@ public class RoomDetail {
     private String roomDetailTimePrice;
     private String roomDetailMonthPrice;
     private String roomDetailSize;
-    private String roomDetailUserEmail;
 }

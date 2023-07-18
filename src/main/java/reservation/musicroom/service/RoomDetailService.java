@@ -9,9 +9,7 @@ import java.util.List;
 public interface RoomDetailService {
 
     int registerRoomDetail(RoomDetailRequestDto roomDetailRequestDto);
-
     List<RoomDetailResponseDto> findRoom(RoomDetailRequestDto roomDetailRequestDto);
-
     RoomDetailResponseDto findRoomNameByRoomNum(RoomDetailRequestDto roomDetailRequestDto);
 
     int roomDetailOptionChange(RoomDetailRequestDto roomDetailRequestDto);

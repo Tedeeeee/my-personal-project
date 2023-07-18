@@ -25,19 +25,19 @@ public class RoomDetailServiceImpl implements RoomDetailService {
         return roomDetailMapper.registerRoomDetail(roomDetail);
     }
 
+
+
     // 위치와 층을 기반한 연습실가져오기
     @Override
     public List<RoomDetailResponseDto> findRoom(RoomDetailRequestDto roomDetailRequestDto) {
         return roomDetailMapper.findRoomDetail(roomDetailRequestDto.getRoomLocation(), roomDetailRequestDto.getRoomFloor());
     }
 
-
+    // 호수와 지역을 기반한 연습실 찾기
     @Override
     public RoomDetailResponseDto findRoomNameByRoomNum(RoomDetailRequestDto roomDetailRequestDto) {
         return roomDetailMapper.findRoomDetailByRoomNum(roomDetailRequestDto.getRoomDetailName(), roomDetailRequestDto.getRoomLocation());
     }
-
-
 
     // 옵션바꾸기
     @Override

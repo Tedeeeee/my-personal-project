@@ -8,6 +8,7 @@ import lombok.Data;
 public class RoomDetailResponseDto {
     private String roomLocation;
     private String roomFloor;
+    private Long roomDetailId;
     private String roomDetailName;
     private String roomDetailPhoto;
     private String roomDetailFacilities;
@@ -15,6 +16,4 @@ public class RoomDetailResponseDto {
     private String roomDetailTimePrice;
     private String roomDetailMonthPrice;
     private String roomDetailSize;
-    private String roomDetailUserEmail;
-
 }

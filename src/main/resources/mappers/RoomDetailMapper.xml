@@ -7,6 +7,12 @@
         VALUES (#{roomLocation}, #{roomFloor}, #{roomDetailName}, #{roomDetailState}, 0, 0, 0)
     </insert>
 
+    <select id="findRoomDetailByLocation">
+        SELECT roomdetail_id
+        FROM roomdetail
+        WHERE room_location = #{roomLocation}
+    </select>
+
     <select id="findRoomDetail">
         SELECT *
         FROM roomdetail
