@@ -2,6 +2,8 @@ package reservation.musicroom.service;
 
 import reservation.musicroom.domain.dto.roomdetailTime.RoomDetailTimeRequestDto;
 
+import java.util.List;
+
 public interface RoomDetailTimeService {
-    int findRoomDetailTime(RoomDetailTimeRequestDto roomDetailTimeRequestDto);
+    List<String> findRoomDetailTime(RoomDetailTimeRequestDto roomDetailTimeRequestDto);
 }
