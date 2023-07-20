@@ -21,7 +21,11 @@ public class RoomDetailTimeController {
     // 월 단위의 예약 상황을 보여주는 컨트롤
     @PostMapping("/findRoomTimeMonth")
     public ResponseEntity<List<String>> findRoomTimeMonth(@RequestBody RoomDetailTimeRequestDto roomDetailTimeRequestDto) {
-        return ResponseEntity.ok(roomDetailTimeService.findRoomDetailTime(roomDetailTimeRequestDto));
+        return ResponseEntity.ok(roomDetailTimeService.findRoomDetailTimeByMonth(roomDetailTimeRequestDto));
     }
 
+    @PostMapping("/findRoomTimeDay")
+    public ResponseEntity<List<String>> findRoomTimeDay(@RequestBody RoomDetailTimeRequestDto roomDetailTimeRequestDto) {
+        return ResponseEntity.ok(roomDetailTimeService.findRoomDetailTimeByDay(roomDetailTimeRequestDto));
+    }
 }

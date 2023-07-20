@@ -3,7 +3,7 @@
 <mapper namespace="reservation.musicroom.mapper.RoomDetailTimeMapper"> 
     
     <select id="findRoomDetailTime">
-        SELECT *
+        SELECT roomdetail_name, roomdetailtime_startDay, roomdetailtime_endDay, roomdetailtime_startTime, roomdetailtime_endTime
         FROM roomdetailtime
         WHERE roomdetail_id = #{roomDetailId}
     </select>
