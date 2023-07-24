@@ -81,9 +81,10 @@ public class RoomDetailTimeServiceImpl implements RoomDetailTimeService {
                 String day = timeDay.getRoomDetailTimeStartDay();
                 if (timeDay.getRoomDetailTimeStartTime() == null && timeDay.getRoomDetailTimeEndTime() == null) {
                     System.out.println("달단위로 예약되어 있는 사람");
+                } else {
+                    LocalTime startTime = LocalTime.parse(timeDay.getRoomDetailTimeStartTime());
+                    LocalTime endTime = LocalTime.parse(timeDay.getRoomDetailTimeEndTime());
                 }
-                LocalTime startTime = LocalTime.parse(timeDay.getRoomDetailTimeStartTime());
-                LocalTime endTime = LocalTime.parse(timeDay.getRoomDetailTimeEndTime());
 
                 if (!timeDay.getRoomDetailTimeStartDay().equals(startWantDay)){
                     System.out.println("날짜가 달라서 괜찮아");
