@@ -11,6 +11,7 @@ public class Room {
     private String memberEmail;
     private String roomName;
     private String roomLocation;
+    private String roomCity;
     private String roomLocationDetail;
     private String roomExplanation;
     private String roomFloor;

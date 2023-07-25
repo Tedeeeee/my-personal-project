@@ -20,7 +20,6 @@ public class RoomDetailServiceImpl implements RoomDetailService {
     // 방 저장하기
     @Override
     public int registerRoomDetail(RoomDetailRequestDto roomDetailRequestDto) {
-        roomDetailRequestDto.setRoomDetailState("Y");
         RoomDetail roomDetail = roomDetailRequestDto.toRoomDetail(roomDetailRequestDto);
         return roomDetailMapper.registerRoomDetail(roomDetail);
     }

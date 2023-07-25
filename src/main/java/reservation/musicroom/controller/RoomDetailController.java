@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import reservation.musicroom.domain.dto.roomDetail.ChangeRoomDetailDto;
 import reservation.musicroom.domain.dto.roomDetail.RoomDetailRequestDto;
 import reservation.musicroom.domain.dto.roomDetail.RoomDetailResponseDto;
+import reservation.musicroom.mapper.RoomDetailMapper;
 import reservation.musicroom.service.RoomDetailService;
 
 import java.util.List;
@@ -16,11 +17,17 @@ import java.util.List;
 public class RoomDetailController {
 
     private final RoomDetailService roomDetailService;
+    private final RoomDetailMapper roomDetailMapper;
+
+    // 개인 연습실 정보 가져오기
+    @GetMapping("/findRoomDetailById")
+    public ResponseEntity<RoomDetailResponseDto> findRoomDetailByName(@RequestParam Long name) {
+        return ResponseEntity.ok(roomDetailMapper.findRoomDetailById(name));
+    }
 
     // 비록 이름만 생성하는 곳이지만 연습실 위치와 층을 기반으로 이름을 생성
     @PostMapping("/registerRoomName")
     public ResponseEntity<Integer> registerRoomDetail(@RequestBody RoomDetailRequestDto roomDetailRequestDto) {
-        System.out.println("roomDetailRequestDto.toString() = " + roomDetailRequestDto.toString());
         return ResponseEntity.ok(roomDetailService.registerRoomDetail(roomDetailRequestDto));
     }
 
@@ -54,13 +61,13 @@ public class RoomDetailController {
         return ResponseEntity.ok(roomDetailService.roomDetailSizeChange(changeRoomDetailDto));
     }
 
-    // 개인 연습실 시간당 가격
+    // 개인 연습실 시간당 가격 변경
     @PostMapping("/changeRoomDetailTimePrice")
     public ResponseEntity<Integer> roomDetailTimePriceChange(@RequestBody ChangeRoomDetailDto changeRoomDetailDto) {
         return ResponseEntity.ok(roomDetailService.roomDetailTimePriceChange(changeRoomDetailDto));
     }
 
-    // 개인 연습실 월별 가격
+    // 개인 연습실 월별 가격 변경
     @PostMapping("/changeRoomDetailMonthPrice")
     public ResponseEntity<Integer> roomDetailMonthPriceChange(@RequestBody ChangeRoomDetailDto changeRoomDetailDto) {
         return ResponseEntity.ok(roomDetailService.roomDetailMonthPriceChange(changeRoomDetailDto));

@@ -20,6 +20,11 @@ public class RoomServiceImpl implements RoomService {
     public int createRoom(RoomRequestDto roomRequestDto) {
         // 예외처리 : 주소를 기반으로 이미 저장되어있는 주소의 가게라면 예외처리
 
+
+        String[] splitLocation = roomRequestDto.getRoomLocation().split(" ");
+        String city = splitLocation[0];
+        roomRequestDto.setRoomCity(city);
+
         Room room = roomRequestDto.toRoom(roomRequestDto);
         return roomMapper.createRoom(room);
     }

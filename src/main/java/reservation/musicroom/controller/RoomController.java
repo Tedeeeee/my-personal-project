@@ -32,9 +32,16 @@ public class RoomController {
         return ResponseEntity.ok(rooms);
     }
 
+    // 전국에 있는 연습실
     @GetMapping("/findAllRoom")
     public ResponseEntity<List<RoomResponseDto>> findAllRoom() {
         return ResponseEntity.ok(roomMapper.findAllRoom());
+    }
+
+    // 도시에 따른 모든 연습실
+    @GetMapping("/findAllRoomByCity")
+    public ResponseEntity<List<RoomResponseDto>> findAllRoom(@RequestParam String city) {
+        return ResponseEntity.ok(roomMapper.getAllRoomByCity(city));
     }
 
     // 룸 이름을 가지고 가져오는 데이터

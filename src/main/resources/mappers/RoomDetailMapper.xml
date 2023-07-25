@@ -3,14 +3,26 @@
 <mapper namespace="reservation.musicroom.mapper.RoomDetailMapper">
 
     <insert id="registerRoomDetail" parameterType="RoomDetail">
-        INSERT INTO roomdetail(room_location, room_floor, roomdetail_name, roomdetail_state, roomdetail_size, roomdetail_timePrice, roomdetail_monthPrice)
-        VALUES (#{roomLocation}, #{roomFloor}, #{roomDetailName}, #{roomDetailState}, 0, 0, 0)
+        INSERT INTO roomdetail(room_location, room_floor, roomdetail_name, roomdetail_size, roomdetail_timePrice, roomdetail_monthPrice)
+        VALUES (#{roomLocation}, #{roomFloor}, #{roomDetailName}, 0, 0, 0)
     </insert>
 
     <select id="findRoomDetailByLocation">
         SELECT roomdetail_id
         FROM roomdetail
         WHERE room_location = #{roomLocation}
+    </select>
+
+    <select id="findRoomDetailById">
+        SELECT *
+        FROM roomdetail
+        WHERE roomdetail_id = #{roomDetailId}
+    </select>
+
+    <select id="findNoReservationRoom">
+        SELECT roomdetail_name
+        FROM roomdetail
+        WHERE roomdetail_id = #{roomDetailId}
     </select>
 
     <select id="findRoomDetail">

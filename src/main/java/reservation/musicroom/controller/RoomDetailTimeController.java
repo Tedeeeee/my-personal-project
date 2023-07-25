@@ -10,6 +10,7 @@ import reservation.musicroom.domain.dto.roomdetailTime.RoomDetailTimeRequestDto;
 import reservation.musicroom.service.RoomDetailTimeService;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,12 +21,18 @@ public class RoomDetailTimeController {
 
     // 월 단위의 예약 상황을 보여주는 컨트롤
     @PostMapping("/findRoomTimeMonth")
-    public ResponseEntity<List<String>> findRoomTimeMonth(@RequestBody RoomDetailTimeRequestDto roomDetailTimeRequestDto) {
+    public ResponseEntity<Map<Long, String>> findRoomTimeMonth(@RequestBody RoomDetailTimeRequestDto roomDetailTimeRequestDto) {
         return ResponseEntity.ok(roomDetailTimeService.findRoomDetailTimeByMonth(roomDetailTimeRequestDto));
     }
 
     @PostMapping("/findRoomTimeDay")
-    public ResponseEntity<List<String>> findRoomTimeDay(@RequestBody RoomDetailTimeRequestDto roomDetailTimeRequestDto) {
+    public ResponseEntity<Map<Long, String>> findRoomTimeDay(@RequestBody RoomDetailTimeRequestDto roomDetailTimeRequestDto) {
         return ResponseEntity.ok(roomDetailTimeService.findRoomDetailTimeByDay(roomDetailTimeRequestDto));
+    }
+
+    // 예약하기
+    @PostMapping("/reservationRoom")
+    public ResponseEntity<Integer> reservationRoom(@RequestBody RoomDetailTimeRequestDto roomDetailTimeRequestDto) {
+        return ResponseEntity.ok(roomDetailTimeService.reservationRoom(roomDetailTimeRequestDto));
     }
 }

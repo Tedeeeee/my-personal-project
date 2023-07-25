@@ -8,4 +8,9 @@
         WHERE roomdetail_id = #{roomDetailId}
     </select>
 
+    <!--예약하기-->
+    <insert id="reservationRoom">
+        INSERT INTO roomdetailtime(roomdetail_id, roomdetail_name, roomdetailtime_startDay, roomdetailtime_endDay, roomdetailtime_startTime, roomdetailtime_endTime)
+        VALUES (#{roomDetailId}, #{roomDetailName}, #{roomDetailTimeStartDay}, #{roomDetailTimeEndDay}, #{roomDetailTimeStartTime}, #{roomDetailTimeEndTime})
+    </insert>
 </mapper>

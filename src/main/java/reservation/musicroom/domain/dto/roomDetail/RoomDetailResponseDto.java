@@ -12,7 +12,6 @@ public class RoomDetailResponseDto {
     private String roomDetailName;
     private String roomDetailPhoto;
     private String roomDetailFacilities;
-    private String roomDetailState;
     private String roomDetailTimePrice;
     private String roomDetailMonthPrice;
     private String roomDetailSize;

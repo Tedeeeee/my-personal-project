@@ -11,16 +11,14 @@ public class RoomDetailRequestDto {
     private String roomDetailPhoto;
     private String roomDetailFacilities;
     private Long roomCount;
-    private String roomDetailState;
 
     public RoomDetail toRoomDetail(RoomDetailRequestDto requestDto) {
         return RoomDetail.builder()
-                .roomLocation(requestDto.roomLocation)
-                .roomFloor(requestDto.roomFloor)
-                .roomDetailName(requestDto.roomDetailName)
-                .roomDetailPhoto(requestDto.roomDetailPhoto)
-                .roomDetailFacilities(requestDto.roomDetailFacilities)
-                .roomDetailState(requestDto.roomDetailState)
+                .roomLocation(requestDto.getRoomLocation())
+                .roomFloor(requestDto.getRoomFloor())
+                .roomDetailName(requestDto.getRoomDetailName())
+                .roomDetailPhoto(requestDto.getRoomDetailPhoto())
+                .roomDetailFacilities(requestDto.getRoomDetailFacilities())
                 .build();
     }
 }

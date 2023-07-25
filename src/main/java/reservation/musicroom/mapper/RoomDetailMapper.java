@@ -11,6 +11,9 @@ import java.util.List;
 public interface RoomDetailMapper {
 
     int registerRoomDetail(RoomDetail roomDetail);
+    String findNoReservationRoom(Long value);
+
+    RoomDetailResponseDto findRoomDetailById(Long RoomDetailId);
 
     List<Long> findRoomDetailByLocation(String roomLocation);
     List<RoomDetailResponseDto> findRoomDetail(@Param("roomLocation") String roomLocation, @Param("roomFloor") String roomFloor);
