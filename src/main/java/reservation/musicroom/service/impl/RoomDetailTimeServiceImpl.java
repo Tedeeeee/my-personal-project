@@ -31,12 +31,16 @@ public class RoomDetailTimeServiceImpl implements RoomDetailTimeService {
         int monthsToAdd = Integer.parseInt(roomDetailTimeRequestDto.getUseMonth());
         LocalDate endWantDay = startWantDay.plusMonths(monthsToAdd);
 
-        for (Long value : roomDetailByLocation) {
+        Iterator<Long> iterator = roomDetailByLocation.iterator();
+        while (iterator.hasNext()) {
+            Long value = iterator.next();
             List<RoomDetailTimeDto> roomDetailTimeByMonth = roomDetailTimeMapper.findRoomDetailTime(value);
             if (roomDetailTimeByMonth == null || roomDetailTimeByMonth.isEmpty()) {
                 String noReservationRoom = roomDetailMapper.findNoReservationRoom(value);
                 usableRoom.put(value, noReservationRoom);
+                iterator.remove();
             } else {
+                boolean isValidReservation = true;
                 for (RoomDetailTimeDto timeMonth : roomDetailTimeByMonth) {
                     String startDay = timeMonth.getRoomDetailTimeStartDay();
                     String endDay = timeMonth.getRoomDetailTimeEndDay();
@@ -50,20 +54,30 @@ public class RoomDetailTimeServiceImpl implements RoomDetailTimeService {
 
                     if (endWantDay.isAfter(start) && endWantDay.isBefore(end)) {
                         System.out.println("마지막 날짜가 걸림");
+                        isValidReservation = false;
+                        break;
                     } else if (startWantDay.isAfter(start) && startWantDay.isBefore(end)) {
                         System.out.println("시작 날짜가 걸림");
-                    } else if (startWantDay.isAfter(start) && endWantDay.isBefore(end)){
+                        isValidReservation = false;
+                        break;
+                    } else if (startWantDay.isBefore(start) && endWantDay.isAfter(end)){
                         System.out.println("사용하고 있는 사이 기간임");
-                    } else if (startWantDay.isBefore(start) && endWantDay.isAfter(end)) {
+                        isValidReservation = false;
+                        break;
+                    } else if (startWantDay.isAfter(start) && endWantDay.isBefore(end)) {
                         System.out.println("원하는 시간에 이미 예약되어있는 날짜가 있음");
-                    } else {
-                        String name = timeMonth.getRoomDetailName();
-                        usableRoom.put(value, name);
+                        isValidReservation = false;
+                        break;
                     }
                 }
+                if (isValidReservation) {
+                    String name = roomDetailTimeByMonth.get(0).getRoomDetailName();
+                    usableRoom.put(value, name);
+                    iterator.remove();
+                }
             }
-
         }
+
         return usableRoom;
     }
 
