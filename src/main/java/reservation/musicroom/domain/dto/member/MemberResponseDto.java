@@ -9,8 +9,8 @@ import lombok.ToString;
 @ToString
 public class MemberResponseDto {
 
-    private String MemberEmail;
-    private String MemberInstagram;
-    private String MemberPhone;
-    private String MemberHomePage;
+    private String memberEmail;
+    private String memberInstagram;
+    private String memberPhone;
+    private String memberHomePage;
 }

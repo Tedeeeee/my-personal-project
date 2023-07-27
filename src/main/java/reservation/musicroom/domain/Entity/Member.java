@@ -11,19 +11,21 @@ import reservation.musicroom.domain.dto.room.RoomRequestDto;
 @ToString
 public class Member {
 
-    private String MemberEmail;
-    private String MemberPassword;
-    private Role MemberRole;
-    private String MemberInstagram;
-    private String MemberPhone;
-    private String MemberHomePage;
+    private Long memberId;
+    private String memberEmail;
+    private String memberPassword;
+    private String memberRole;
+    private String memberInstagram;
+    private String memberPhone;
+    private String memberHomePage;
+    private String memberState;
 
     public MemberResponseDto toMemberResponse(Member member) {
         return MemberResponseDto.builder()
-                .MemberEmail(member.getMemberEmail())
-                .MemberInstagram(member.getMemberInstagram())
-                .MemberPhone(member.getMemberPhone())
-                .MemberHomePage(member.getMemberHomePage())
+                .memberEmail(member.getMemberEmail())
+                .memberInstagram(member.getMemberInstagram())
+                .memberPhone(member.getMemberPhone())
+                .memberHomePage(member.getMemberHomePage())
                 .build();
     }
 }

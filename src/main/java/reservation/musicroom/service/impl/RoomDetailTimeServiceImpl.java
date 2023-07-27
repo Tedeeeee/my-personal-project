@@ -9,7 +9,6 @@ import reservation.musicroom.mapper.RoomDetailMapper;
 import reservation.musicroom.mapper.RoomDetailTimeMapper;
 import reservation.musicroom.service.RoomDetailTimeService;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
