@@ -1,4 +1,4 @@
-package reservation.musicroom.utill;
+package reservation.musicroom.utils;
 
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 import java.security.Key;
 import java.util.*;
 
-@Log4j2
 @Component
+@Log4j2
 public class TokenUtil {
 
-    @Value("${jwt.security.key}")
+    @Value("${jwt.secret.key}")
     private String secretKey;
 
     private static final String ACCESS_TOKEN_SUBJECT = "AccessToken";

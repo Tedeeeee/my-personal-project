@@ -3,8 +3,8 @@
 <mapper namespace="reservation.musicroom.mapper.MemberMapper">
 
     <insert id="save" parameterType="Member">
-        INSERT INTO member(member_email, member_password, member_role)
-        VALUES (#{memberEmail}, #{memberPassword}, #{memberRole})
+        INSERT INTO member(member_email, member_password, member_role, member_state)
+        VALUES (#{memberEmail}, #{memberPassword}, #{memberRole}, #{memberState})
     </insert>
     
     <!--멤버 찾기-->

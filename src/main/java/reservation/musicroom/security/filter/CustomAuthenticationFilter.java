@@ -11,9 +11,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
+import reservation.musicroom.domain.Entity.Member;
 import reservation.musicroom.domain.dto.member.MemberRequestDto;
 
-@Component
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
 
@@ -37,14 +37,13 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
     private UsernamePasswordAuthenticationToken getAuthRequest(HttpServletRequest request) throws Exception{
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.configure(JsonParser.Feature.AUTO_CLOSE_SOURCE, true);
-            MemberRequestDto user = objectMapper.readValue(request.getInputStream(), MemberRequestDto.class);
+            Member user = objectMapper.readValue(request.getInputStream(), Member.class);
 
             return new UsernamePasswordAuthenticationToken(user.getMemberEmail(), user.getMemberPassword());
         } catch (UsernameNotFoundException e) {
             throw new UsernameNotFoundException("회원 정보를 찾을수 없습니다");
         } catch (Exception e) {
-            throw new Exception("오류!");
+            throw new Exception(e);
         }
     }
 }

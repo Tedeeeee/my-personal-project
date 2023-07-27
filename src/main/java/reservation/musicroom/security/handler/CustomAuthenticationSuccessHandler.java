@@ -10,13 +10,12 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
 import org.springframework.stereotype.Component;
 import reservation.musicroom.domain.Entity.Member;
 import reservation.musicroom.mapper.MemberMapper;
-import reservation.musicroom.utill.TokenUtil;
+import reservation.musicroom.utils.TokenUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 
-@Component
 @RequiredArgsConstructor
 public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 

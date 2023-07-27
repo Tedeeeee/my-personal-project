@@ -19,9 +19,6 @@ public class MemberRequestDto {
                 .memberEmail(memberRequestDto.getMemberEmail())
                 .memberPassword(memberRequestDto.getMemberPassword())
                 .memberRole("ROLE_MEMBER")
-                .memberInstagram(memberRequestDto.getMemberInstagram())
-                .memberPhone(memberRequestDto.getMemberPhone())
-                .memberHomePage(memberRequestDto.getMemberHomePage())
                 .memberState("T")
                 .build();
     }
@@ -31,9 +28,6 @@ public class MemberRequestDto {
                 .memberEmail(memberRequestDto.getMemberEmail())
                 .memberPassword(memberRequestDto.getMemberPassword())
                 .memberRole("ROLE_OWNER")
-                .memberInstagram(memberRequestDto.getMemberInstagram())
-                .memberPhone(memberRequestDto.getMemberPhone())
-                .memberHomePage(memberRequestDto.getMemberHomePage())
                 .memberState("T")
                 .build();
     }

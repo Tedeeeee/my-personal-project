@@ -5,6 +5,6 @@ import reservation.musicroom.domain.Entity.Member;
 
 @Mapper
 public interface MemberMapper {
-    void save(Member member);
+    int save(Member member);
     Member findByEmail(String memberEmail);
 }

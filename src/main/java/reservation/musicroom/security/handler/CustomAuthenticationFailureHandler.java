@@ -16,7 +16,6 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 
 @Slf4j
-@Component
 public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
     @Override
