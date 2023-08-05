@@ -1,6 +1,5 @@
 package reservation.musicroom.security.filter;
 
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,9 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.stereotype.Component;
 import reservation.musicroom.domain.Entity.Member;
-import reservation.musicroom.domain.dto.member.MemberRequestDto;
 
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -45,5 +42,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
         } catch (Exception e) {
             throw new Exception(e);
         }
+
     }
 }

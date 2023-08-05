@@ -6,7 +6,7 @@ import reservation.musicroom.domain.dto.member.MemberResponseDto;
 
 public interface MemberService {
 
-    MemberResponseDto findByEmail(String memberEmail);
+    MemberResponseDto findByEmail();
 
     int signUp(MemberRequestDto memberRequestDto) throws Exception;
 }

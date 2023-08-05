@@ -13,4 +13,5 @@ public class MemberResponseDto {
     private String memberInstagram;
     private String memberPhone;
     private String memberHomePage;
+    private String memberRole;
 }

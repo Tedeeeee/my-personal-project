@@ -26,6 +26,7 @@ public class Member {
                 .memberInstagram(member.getMemberInstagram())
                 .memberPhone(member.getMemberPhone())
                 .memberHomePage(member.getMemberHomePage())
+                .memberRole(member.getMemberRole())
                 .build();
     }
 }

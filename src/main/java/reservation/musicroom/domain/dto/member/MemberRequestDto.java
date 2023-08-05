@@ -18,7 +18,7 @@ public class MemberRequestDto {
         return Member.builder()
                 .memberEmail(memberRequestDto.getMemberEmail())
                 .memberPassword(memberRequestDto.getMemberPassword())
-                .memberRole("ROLE_MEMBER")
+                .memberRole("MEMBER")
                 .memberState("T")
                 .build();
     }
@@ -27,7 +27,7 @@ public class MemberRequestDto {
         return Member.builder()
                 .memberEmail(memberRequestDto.getMemberEmail())
                 .memberPassword(memberRequestDto.getMemberPassword())
-                .memberRole("ROLE_OWNER")
+                .memberRole("OWNER")
                 .memberState("T")
                 .build();
     }

@@ -1,12 +1,12 @@
 package reservation.musicroom.utils;
 
-import io.jsonwebtoken.JwtBuilder;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import reservation.musicroom.mapper.MemberMapper;
 
 import java.security.Key;
 import java.util.*;
@@ -68,4 +68,48 @@ public class TokenUtil {
         byte[] keyBytes = Base64.getDecoder().decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
+    // 헤더에 인자값으로 들어온 이름을 가진 값을 추출
+    public static String getTokenFromHeader(String header) {
+        return header.split(" ")[1];
+    }
+
+    // 클레임을 확인하는 메소드
+    private Claims getClaimsFormToken(String token) {
+        Key key = createSignature();
+        try {
+            Claims body = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
+            log.info("토큰 해석 성공: " + body);
+            return body;
+        } catch (JwtException e) {
+            log.error("토큰 해석 실패" + e.getMessage());
+            return null;
+        }
+    }
+
+    // 토큰 유효성 검사
+    public boolean isValidToken(String token) {
+        try {
+            Claims claims = getClaimsFormToken(token);
+            log.info("expireTime : " + claims.getExpiration());
+
+            return true;
+        } catch (ExpiredJwtException exception) {
+            log.error("만료된 JWT 토큰입니다");
+            return false;
+        } catch (JwtException exception) {
+            log.error("토큰에 문제가 있습니다.");
+            return false;
+        } catch (NullPointerException exception) {
+            log.error("토큰이 존재하지 않습니다");
+            return false;
+        }
+    }
+
+    // 멤버 아이디 가져오기
+    public String getMemberIdFromToken(String token) {
+        Claims claims = getClaimsFormToken(token);
+        return claims.get("memberNum").toString();
+    }
+
 }

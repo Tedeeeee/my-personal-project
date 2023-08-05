@@ -8,6 +8,7 @@ import reservation.musicroom.domain.dto.member.MemberRequestDto;
 import reservation.musicroom.domain.dto.member.MemberResponseDto;
 import reservation.musicroom.mapper.MemberMapper;
 import reservation.musicroom.service.MemberService;
+import reservation.musicroom.utils.SecurityUtil;
 
 @Service
 @RequiredArgsConstructor
@@ -17,10 +18,10 @@ public class MemberServiceImpl implements MemberService {
     private final BCryptPasswordEncoder passwordEncoder;
 
     @Override
-    public MemberResponseDto findByEmail(String memberEmail) {
-        // 멤버 존재 확인
+    public MemberResponseDto findByEmail() {
+        String currentMemberId = SecurityUtil.getCurrentMemberId();
 
-        Member member = memberMapper.findByEmail(memberEmail);
+        Member member = memberMapper.findByEmail(currentMemberId);
         return member.toMemberResponse(member);
     }
 
@@ -31,7 +32,7 @@ public class MemberServiceImpl implements MemberService {
         if (memberMapper.findByEmail(memberRequestDto.getMemberEmail()) != null) {
             throw new Exception("중복아이디 설정");
         }
-        
+
         memberRequestDto.setMemberPassword(passwordEncoder.encode(memberRequestDto.getMemberPassword()));
         Member member = memberRequestDto.toMember(memberRequestDto);
 

@@ -14,4 +14,10 @@
         WHERE member_email = #{memberEmail}
     </select>
 
+    <select id="findBySq">
+        SELECT *
+        FROM member
+        WHERE member_id = #{memberId}
+    </select>
+
 </mapper>

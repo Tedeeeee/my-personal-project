@@ -15,12 +15,14 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/findByEmail")
-    public ResponseEntity<MemberResponseDto> findByEmail(@RequestParam String email) {
-        return ResponseEntity.ok(memberService.findByEmail(email));
+    public ResponseEntity<MemberResponseDto> findByEmail() {
+        return ResponseEntity.ok(memberService.findByEmail());
     }
+
 
     @PostMapping("/signUp")
     public ResponseEntity<Integer> signUp(@RequestBody MemberRequestDto memberRequestDto) throws Exception {
+        System.out.println("memberRequestDto = " + memberRequestDto);
         return ResponseEntity.ok(memberService.signUp(memberRequestDto));
     }
 

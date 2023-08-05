@@ -3,7 +3,7 @@
 <mapper namespace="reservation.musicroom.mapper.RoomMapper">
 
     <insert id="createRoom" parameterType="Room">
-        INSERT INTO room(member_email, room_name,room_city, room_location, room_locationDetail, room_explanation, room_floor, room_facilities, room_count)
+        INSERT INTO room(member_email, room_name, room_city, room_location, room_locationDetail, room_explanation, room_floor, room_facilities, room_count)
         VALUES (#{memberEmail},#{roomName},#{roomCity}, #{roomLocation}, #{roomLocationDetail},#{roomExplanation}, #{roomFloor}, #{roomFacilities}, 0)
     </insert>
 

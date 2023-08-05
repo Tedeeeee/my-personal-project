@@ -8,15 +8,16 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import reservation.musicroom.mapper.MemberMapper;
 import reservation.musicroom.security.Service.CustomUserDetailService;
 import reservation.musicroom.security.filter.CustomAuthenticationFilter;
+import reservation.musicroom.security.filter.JwtAuthenticationFilter;
 import reservation.musicroom.security.handler.CustomAuthenticationFailureHandler;
 import reservation.musicroom.security.handler.CustomAuthenticationSuccessHandler;
 import reservation.musicroom.security.provider.CustomAuthenticationProvider;
@@ -32,16 +33,12 @@ public class WebSecurityConfig {
     private final MemberMapper memberMapper;
 
     @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return web -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
-    }
-
-    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
+                .cors(cors -> cors.configure(http))
 
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -50,7 +47,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
 
                 .addFilterBefore(customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-
+                .addFilterBefore(jwtAuthenticationFilter(), BasicAuthenticationFilter.class)
         ;
         return http.build();
     }
@@ -88,6 +85,11 @@ public class WebSecurityConfig {
     @Bean
     public CustomAuthenticationFailureHandler customAuthenticationFailureHandler() {
         return new CustomAuthenticationFailureHandler();
+    }
+
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+        return new JwtAuthenticationFilter(tokenUtil, memberMapper);
     }
 
 }

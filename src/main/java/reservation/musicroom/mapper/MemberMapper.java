@@ -7,4 +7,6 @@ import reservation.musicroom.domain.Entity.Member;
 public interface MemberMapper {
     int save(Member member);
     Member findByEmail(String memberEmail);
+
+    Member findBySq(int memberSq);
 }

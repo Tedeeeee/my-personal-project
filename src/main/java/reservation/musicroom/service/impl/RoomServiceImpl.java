@@ -32,6 +32,7 @@ public class RoomServiceImpl implements RoomService {
     // 추후에 SecurityContext 에 담긴 사용자의 정보를 통해 memberId 를 가져와서 memeberId 조차도 안받을 예정
     @Override
     public List<RoomResponseDto> getAllRoomByMemberId(String memberEmail) {
+        System.out.println(memberEmail);
         return roomMapper.getAllRoom(memberEmail);
     }
 

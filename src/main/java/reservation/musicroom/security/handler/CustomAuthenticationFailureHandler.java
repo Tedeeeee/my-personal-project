@@ -27,7 +27,7 @@ public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationF
         if (exception instanceof AuthenticationServiceException) {
             failMsg = "로그인 정보가 일치하지 않습니다.";
         } else if (exception instanceof BadCredentialsException){
-            failMsg = "비밀번호가 일치하지 않습니다.";
+            failMsg = "비밀번호가 치하지 않습니다.";
         } else if (exception instanceof LockedException) {
             failMsg = "사용자의 계정은 잠겼습니다.";
         } else if (exception instanceof DisabledException){
